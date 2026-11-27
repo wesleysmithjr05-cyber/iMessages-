@@ -1,5 +1,5 @@
 // ============================================
-// IMESSAGE 2 — VERSÃO ATUALIZADA
+// IMESSAGE 2 — VERSÃO COM DATAS AUTOMÁTICAS
 // ============================================
 
 let conversas = [];
@@ -15,41 +15,123 @@ const ORIGEM_IPAJ = "Transcrição fornecida pelo utilizador — não verificada
 const $ = id => document.getElementById(id);
 
 // ============================================
-// TRANSCRIÇÃO IPAJ — ONTEM E HOJE
+// TRANSCRIÇÃO IPAJ — DATAS REAIS
 // ============================================
 
 const mensagensIPAJ = [
-    // ONTEM — 21 MENSAGENS
 
-    ["recebida", "Tá me bloquear né", "9:39 AM", "Ontem"],
-    ["recebida", "Não há segundo processo d aumento d valor no tribunal boss, lá se assina uma vez.", "12:22", "Ontem"],
-    ["recebida", "Às 07hr não vou conseguir chegar no IPAJ,às 08hr sim", "2:28 PM", "Ontem"],
-    ["enviada", "As 9preciso viajar. Entao me diz uma unica coisa.", "2:28 PM", "Ontem"],
-    ["recebida", "As 08 sim", "", "Ontem"],
-    ["recebida", "as 07 não vou conseguir chegar lá", "2:31 PM", "Ontem"],
-    ["enviada", "Entendo. Se eu nao viajar vou perder carro, carros agora saem as 12.", "2:31", "Ontem"],
-    ["recebida", "ja você pensa que vai sair que hr d IPAJ.", "", "Ontem"],
-    ["recebida", "Sai d casa preparado pra viajar.", "", "Ontem"],
-    ["enviada", "É pra eu vir n ipaj com pastas?", "2:36", "Ontem"],
-    ["recebida", "Pelo eu sei lá começam à atender as pessoas às 08 não as 07hr,eu chego às 08hr", "2:39pm", "Ontem"],
-    ["enviada", "Ipaj abre 7:30. Boss eu tou a te falar oque me falaram lá, entao se vc nao quer escutar cabe a sí.", "2:41pm", "Ontem"],
-    ["recebida", "as 07 estou a me preparar.", "02:41pm", "Ontem"],
-    ["recebida", "Já abrir é atender não fazem limpezas, crosse t encontro lá", "02:43pm", "Ontem"],
-    ["recebida", "Né vejo a hr,de estar lá a debater sobre pensão alimentar d 1500 na frente dos doutores kkkkkkk, você me envergonha.", "4:44 PM", "Ontem"],
-    ["recebida", "Se não for 5mil quero 4mil,de pensão alimentar definitiva,eu nao vou aceitar 1500, queres me dar 1500 porque bebê está na barriga,esse dinheiro devo guardar , para o caso d emergência, você tipo não pensa.", "4:52 PM", "Ontem"],
-    ["recebida", "do bem ou do mal, você vai me dar dinheiro, juro, você não conhece a minha família, brinca só comigo, eu ate queria te levar ao tribunal você lá ia me dar qualquer dinheiro que eu pedir, na mesma se amanha nos não chegarmos a um acordo iremos mesmo no tribunal, daqui vc não escapa é 5000 ou 40 mil. Mesmo se eu tivesse outra pessoa, eu vou te apertar bem pra me dar dinheiro de sustentar essa criança por mais que ainda não nasci, por que vc não saiba que é teu filho ou não. Crosse, voce vai me dar dinheiro kkkkkk, tou a gostar. La tambem sempre vão me dar razão pk eu sou mulher gravida, mesmo mentindo vão me dar razão, não viste ontem quando falei de 6meses acreditaram, sempre vão acreditar em mim.", "4:55 PM", "Ontem"],
-    ["recebida", "eu me da dinheiro ou vamos cortar directamente n tribunal e você vai ficar prejudicado", "4:59 PM", "Ontem"],
-    ["recebida", "vc ha de ver se nao aceitar o quê estou a te falar, vai acabar mal e nao me faz eu me arrepender.", "5:03 PM", "Ontem"],
-    ["recebida", "Mesmo você que não grávida né nada pode fazer ukêh com 1500", "7:17 PM", "Ontem"],
-    ["recebida", "Estou a pedir vir com tigelas", "10:03", "Ontem"],
+    // 25/11/2026 — ANTEONTEM
 
-    // HOJE — 4 MENSAGENS
+    ["recebida", "Tá me bloquear né", "9:39 AM", "2026-11-25"],
+    ["recebida", "Não há segundo processo d aumento d valor no tribunal boss, lá se assina uma vez.", "12:22", "2026-11-25"],
+    ["recebida", "Às 07hr não vou conseguir chegar no IPAJ,às 08hr sim", "2:28pm", "2026-11-25"],
+    ["enviada", "As 9preciso viajar. Entao me diz uma unica coisa.", "2:28pm", "2026-11-25"],
+    ["recebida", "As 08 sim", "", "2026-11-25"],
+    ["recebida", "as 07 não vou conseguir chegar lá", "2:31pm", "2026-11-25"],
+    ["enviada", "Entendo. Se eu nao viajar vou perder carro, carros agora saem as 12.", "2:31", "2026-11-25"],
+    ["recebida", "ja você pensa que vai sair que hr d IPAJ.", "", "2026-11-25"],
+    ["recebida", "Sai d casa preparado pra viajar.", "", "2026-11-25"],
+    ["enviada", "É pra eu vir n ipaj com pastas?", "2:36", "2026-11-25"],
+    ["recebida", "Pelo eu sei lá começam à atender as pessoas às 08 não as 07hr,eu chego às 08hr", "2:39", "2026-11-25"],
+    ["enviada", "Ipaj abre 7:30. Boss eu tou a te falar oque me falaram lá, entao se vc nao quer escutar cabe a sí.", "2:41", "2026-11-25"],
+    ["recebida", "as 07 estou a me preparar.", "02:41", "2026-11-25"],
+    ["recebida", "Já abrir é atender não fazem limpezas, crosse t encontro lá", "02:43", "2026-11-25"],
+    ["recebida", "Né vejo a hr,de estar lá a debater sobre pensão alimentar d 1500 na frente dos doutores kkkkkkk, você me envergonha.", "4:44pm", "2026-11-25"],
+    ["recebida", "Se não for 5mil quero 4mil,de pensão alimentar definitiva,eu nao vou aceitar 1500, queres me dar 1500 porque bebê está na barriga,esse dinheiro devo guardar , para o caso d emergência, você tipo não pensa.", "4:52pm", "2026-11-25"],
+    ["recebida", "do bem ou do mal, você vai me dar dinheiro, juro, você não conhece a minha família, brinca só comigo, eu ate queria te levar ao tribunal você lá ia me dar qualquer dinheiro que eu pedir, na mesma se amanha nos não chegarmos a um acordo iremos mesmo no tribunal, daqui vc não escapa é 5000 ou 40 mil. Mesmo se eu tivesse outra pessoa, eu vou te apertar bem pra me dar dinheiro de sustentar essa criança por mais que ainda não nasci, por que vc não saiba que é teu filho ou não. Crosse, voce vai me dar dinheiro kkkkkk, tou a gostar. La tambem sempre vão me dar razão pk eu sou mulher gravida, mesmo mentindo vão me dar razão, não viste ontem quando falei de 6meses acreditaram, sempre vão acreditar em mim.", "4:55 PM", "2026-11-25"],
+    ["recebida", "eu me da dinheiro ou vamos cortar directamente n tribunal e você vai ficar prejudicado", "4:59pm", "2026-11-25"],
+    ["recebida", "vc ha de ver se nao aceitar o quê estou a te falar, vai acabar mal e nao me faz eu me arrepender.", "5:03pm", "2026-11-25"],
+    ["recebida", "Mesmo você que não grávida né nada pode fazer ukêh com 1500", "7:17pm", "2026-11-25"],
+    ["recebida", "Estou a pedir vir com tigelas", "10:03", "2026-11-25"],
 
-    ["recebida", "Ja saíste??", "6:27am", "Hoje"],
-    ["recebida", "Já estou pronta peço dinheiro d chapa", "7:25am", "Hoje"],
-    ["recebida", "Eu não eid aceitar mais ir lá contigo ouviste bem, você me vê tipo sou criança,eu e você vamos se encontrar no tribunal.", "8:54am", "Hoje"],
-    ["recebida", "T custa nos dar pensão alimentar nos deixar afinal qual é o teu problema", "8:56am", "Hoje"]
+    // 26/11/2026 — ONTEM
+
+    ["recebida", "Ja saíste??", "6:27am", "2026-11-26"],
+    ["recebida", "Já estou pronta peço dinheiro d chapa", "7:25am", "2026-11-26"],
+    ["recebida", "Eu não eid aceitar mais ir lá contigo ouviste bem, você me vê tipo sou criança,eu e você vamos se encontrar no tribunal.", "8:54am", "2026-11-26"],
+    ["recebida", "T custa nos dar pensão alimentar nos deixar afinal qual é o teu problema", "8:56am", "2026-11-26"],
+
+    // 27/11/2026 — HOJE
+
+    ["recebida", "Bom dia, peço pra ligares", "9:37am", "2026-11-27"]
 ];
+
+// ============================================
+// DATAS AUTOMÁTICAS
+// ============================================
+
+function obterDataLocal(data = new Date()) {
+    const ano = data.getFullYear();
+    const mes = String(data.getMonth() + 1).padStart(2, "0");
+    const dia = String(data.getDate()).padStart(2, "0");
+
+    return `${ano}-${mes}-${dia}`;
+}
+
+function converterDataISO(dataISO) {
+    if (!dataISO || typeof dataISO !== "string") return null;
+
+    const partes = dataISO.split("-").map(Number);
+
+    if (
+        partes.length !== 3 ||
+        partes.some(Number.isNaN)
+    ) {
+        return null;
+    }
+
+    const data = new Date(
+        partes[0],
+        partes[1] - 1,
+        partes[2]
+    );
+
+    if (
+        data.getFullYear() !== partes[0] ||
+        data.getMonth() !== partes[1] - 1 ||
+        data.getDate() !== partes[2]
+    ) {
+        return null;
+    }
+
+    return data;
+}
+
+function formatarSeparadorData(dataISO) {
+    const data = converterDataISO(dataISO);
+
+    if (!data) return "Data desconhecida";
+
+    const hoje = new Date();
+    hoje.setHours(0, 0, 0, 0);
+
+    const dataComparar = new Date(data);
+    dataComparar.setHours(0, 0, 0, 0);
+
+    const diferenca = Math.round(
+        (hoje.getTime() - dataComparar.getTime()) /
+        86400000
+    );
+
+    if (diferenca === 0) return "Hoje";
+    if (diferenca === 1) return "Ontem";
+    if (diferenca === 2) return "Anteontem";
+
+    if (diferenca > 2 && diferenca < 7) {
+        return data.toLocaleDateString("pt-PT", {
+            weekday: "long"
+        });
+    }
+
+    const mesmoAno =
+        data.getFullYear() === hoje.getFullYear();
+
+    return data.toLocaleDateString("pt-PT", {
+        day: "numeric",
+        month: "long",
+        ...(mesmoAno ? {} : {year: "numeric"})
+    });
+}
 
 // ============================================
 // NOTIFICAÇÕES
@@ -64,7 +146,9 @@ const configuracaoPadrao = {
     estilo: "banner"
 };
 
-let configuracaoNotificacoes = {...configuracaoPadrao};
+let configuracaoNotificacoes = {
+    ...configuracaoPadrao
+};
 
 function carregarConfiguracaoNotificacoes() {
     try {
@@ -82,7 +166,8 @@ function carregarConfiguracaoNotificacoes() {
 }
 
 function guardarConfiguracaoNotificacoes() {
-    const ativadas = $("notificationsEnabled")?.checked ?? true;
+    const ativadas =
+        $("notificationsEnabled")?.checked ?? true;
 
     configuracaoNotificacoes = {
         ativadas,
@@ -142,11 +227,12 @@ function atualizarPrevisualizacaoNotificacao() {
 
     if (!elemento) return;
 
-    const nome = configuracaoNotificacoes.nome === "app"
-        ? "iMessage 2"
-        : configuracaoNotificacoes.nome === "both"
-            ? "iMessage 2 · Contacto"
-            : "Contacto";
+    const nome =
+        configuracaoNotificacoes.nome === "app"
+            ? "iMessage 2"
+            : configuracaoNotificacoes.nome === "both"
+                ? "iMessage 2 · Contacto"
+                : "Contacto";
 
     let mensagem = "Nova mensagem recebida.";
 
@@ -176,8 +262,15 @@ function fecharNotificacoes() {
 }
 
 function configurarEventosNotificacoes() {
-    $("notificationsButton")?.addEventListener("click", abrirNotificacoes);
-    $("closeNotifications")?.addEventListener("click", fecharNotificacoes);
+    $("notificationsButton")?.addEventListener(
+        "click",
+        abrirNotificacoes
+    );
+
+    $("closeNotifications")?.addEventListener(
+        "click",
+        fecharNotificacoes
+    );
 
     $("saveNotifications")?.addEventListener("click", () => {
         guardarConfiguracaoNotificacoes();
@@ -192,7 +285,10 @@ function configurarEventosNotificacoes() {
         "notificationSound",
         "notificationPosition"
     ].forEach(id => {
-        $(id)?.addEventListener("change", atualizarPrevisualizacaoNotificacao);
+        $(id)?.addEventListener(
+            "change",
+            atualizarPrevisualizacaoNotificacao
+        );
     });
 }
 
@@ -202,7 +298,11 @@ function configurarEventosNotificacoes() {
 
 function guardarConversas() {
     try {
-        localStorage.setItem(CHAVE_CONVERSAS, JSON.stringify(conversas));
+        localStorage.setItem(
+            CHAVE_CONVERSAS,
+            JSON.stringify(conversas)
+        );
+
         return true;
     } catch (erro) {
         console.error("Erro ao guardar:", erro);
@@ -232,13 +332,30 @@ function recuperarConversas() {
             ? contacto.mensagens
             : [];
 
-        if (contacto.silenciado === undefined) contacto.silenciado = false;
-        if (contacto.desconhecido === undefined) contacto.desconhecido = false;
-        if (contacto.naoLidas === undefined) contacto.naoLidas = 0;
+        if (contacto.silenciado === undefined) {
+            contacto.silenciado = false;
+        }
+
+        if (contacto.desconhecido === undefined) {
+            contacto.desconhecido = false;
+        }
+
+        if (contacto.naoLidas === undefined) {
+            contacto.naoLidas = 0;
+        }
 
         contacto.mensagens.forEach(mensagem => {
-            if (mensagem.apagada === undefined) mensagem.apagada = false;
-            if (mensagem.lida === undefined) mensagem.lida = false;
+            if (mensagem.apagada === undefined) {
+                mensagem.apagada = false;
+            }
+
+            if (mensagem.lida === undefined) {
+                mensagem.lida = false;
+            }
+
+            if (!mensagem.data) {
+                mensagem.data = obterDataLocal();
+            }
         });
     });
 }
@@ -267,12 +384,25 @@ function criarContacto(nome, numero, iniciais) {
 }
 
 function editarContacto(id, novosDados) {
-    const contacto = conversas.find(c => String(c.id) === String(id));
+    const contacto = conversas.find(
+        c => String(c.id) === String(id)
+    );
 
     if (!contacto) return false;
 
     Object.assign(contacto, novosDados);
+
     guardarConversas();
+
+    // Atualiza imediatamente o cabeçalho
+    // com o número novo do contacto.
+    if (
+        conversaAtual &&
+        String(conversaAtual.id) === String(contacto.id)
+    ) {
+        conversaAtual = contacto;
+        renderizarCabecalho();
+    }
 
     return true;
 }
@@ -290,13 +420,16 @@ function iniciaisNome(nome) {
 // ============================================
 
 function adicionarMensagem(contacto, texto, tipo, hora) {
-    if (!contacto || !texto || !texto.trim()) return false;
+    if (!contacto || !texto || !texto.trim()) {
+        return false;
+    }
 
     const mensagem = {
         id: Date.now() + Math.random(),
         texto: texto.trim(),
         tipo,
         hora: hora || horaAtual(),
+        data: obterDataLocal(),
         apagada: false,
         lida: tipo === "enviada",
         origem: "manual"
@@ -305,7 +438,8 @@ function adicionarMensagem(contacto, texto, tipo, hora) {
     contacto.mensagens.push(mensagem);
 
     if (tipo === "recebida") {
-        contacto.naoLidas = (contacto.naoLidas || 0) + 1;
+        contacto.naoLidas =
+            (contacto.naoLidas || 0) + 1;
     }
 
     guardarConversas();
@@ -326,6 +460,7 @@ function apagarMensagem(contacto, mensagem) {
     if (!contacto || !mensagem) return false;
 
     mensagem.apagada = true;
+
     guardarConversas();
     renderizarAplicacao();
 
@@ -336,6 +471,7 @@ function recuperarMensagem(contacto, mensagem) {
     if (!contacto || !mensagem) return false;
 
     mensagem.apagada = false;
+
     guardarConversas();
     renderizarAplicacao();
 
@@ -350,6 +486,7 @@ function eliminarDefinitivamente(contacto, mensagem) {
     if (indice === -1) return false;
 
     contacto.mensagens.splice(indice, 1);
+
     guardarConversas();
     renderizarAplicacao();
 
@@ -362,7 +499,10 @@ function listarMensagensApagadas() {
     conversas.forEach(contacto => {
         contacto.mensagens.forEach(mensagem => {
             if (mensagem.apagada) {
-                resultado.push({contacto, mensagem});
+                resultado.push({
+                    contacto,
+                    mensagem
+                });
             }
         });
     });
@@ -378,8 +518,14 @@ function pesquisarMensagens(palavra) {
 
     conversas.forEach(contacto => {
         contacto.mensagens.forEach(mensagem => {
-            if (!mensagem.apagada && mensagem.texto.toLowerCase().includes(pesquisa)) {
-                resultados.push({contacto, mensagem});
+            if (
+                !mensagem.apagada &&
+                mensagem.texto.toLowerCase().includes(pesquisa)
+            ) {
+                resultados.push({
+                    contacto,
+                    mensagem
+                });
             }
         });
     });
@@ -398,33 +544,42 @@ function importarTranscricaoIPAJ() {
     );
 
     if (!contacto) {
-        contacto = criarContacto("Contacto da transcrição", "", "CT");
+        contacto = criarContacto(
+            "Contacto da transcrição",
+            "",
+            "CT"
+        );
+
         contacto.origem = ORIGEM_IPAJ;
         contacto.tipoConversa = "transcricao_ipaj";
     }
 
     const mensagensAntigas = contacto.mensagens || [];
 
-    const mensagensAtualizadas = mensagensIPAJ.map((dados, indice) => {
-        const id = "ipaj-" + (indice + 1);
+    const mensagensAtualizadas = mensagensIPAJ.map(
+        (dados, indice) => {
+            const id = "ipaj-" + (indice + 1);
 
-        const antiga = mensagensAntigas.find(
-            m => String(m.id) === id
-        );
+            const antiga = mensagensAntigas.find(
+                m => String(m.id) === id
+            );
 
-        return {
-            id,
-            tipo: dados[0],
-            texto: dados[1],
-            hora: dados[2],
-            dia: dados[3],
-            apagada: antiga ? antiga.apagada : false,
-            lida: antiga ? antiga.lida : true,
-            origem: "ipaj"
-        };
-    });
-
-    // Preserva mensagens manuais e evita duplicar a transcrição.
+            return {
+                id,
+                tipo: dados[0],
+                texto: dados[1],
+                hora: dados[2],
+                data: dados[3],
+                apagada: antiga
+                    ? antiga.apagada
+                    : false,
+                lida: antiga
+                    ? antiga.lida
+                    : true,
+                origem: "ipaj"
+            };
+        }
+    );
 
     const mensagensManuais = mensagensAntigas.filter(m =>
         m.origem !== "ipaj" &&
@@ -474,15 +629,19 @@ function ordenarConversas() {
 
 function criarAvatar(contacto, tamanhoExtra = "") {
     const avatar = document.createElement("div");
+
     avatar.className = "avatar " + tamanhoExtra;
 
     if (contacto.foto) {
         const imagem = document.createElement("img");
+
         imagem.src = contacto.foto;
         imagem.alt = contacto.nome;
+
         avatar.appendChild(imagem);
     } else {
-        avatar.textContent = contacto.iniciais || iniciaisNome(contacto.nome);
+        avatar.textContent =
+            contacto.iniciais || iniciaisNome(contacto.nome);
     }
 
     return avatar;
@@ -493,17 +652,25 @@ function criarAvatar(contacto, tamanhoExtra = "") {
 // ============================================
 
 function obterPrevia(contacto) {
-    const mensagens = contacto.mensagens.filter(m => !m.apagada);
+    const mensagens = contacto.mensagens.filter(
+        m => !m.apagada
+    );
 
-    if (!mensagens.length) return "Nenhuma mensagem";
+    if (!mensagens.length) {
+        return "Nenhuma mensagem";
+    }
 
     const ultima = mensagens[mensagens.length - 1];
 
-    return (ultima.tipo === "enviada" ? "Tu: " : "") + ultima.texto;
+    return (
+        ultima.tipo === "enviada" ? "Tu: " : ""
+    ) + ultima.texto;
 }
 
 function obterHora(contacto) {
-    const mensagens = contacto.mensagens.filter(m => !m.apagada);
+    const mensagens = contacto.mensagens.filter(
+        m => !m.apagada
+    );
 
     if (!mensagens.length) return "";
 
@@ -520,38 +687,50 @@ function renderizarListaConversas() {
     let filtradas = [...conversas];
 
     if (filtroAtual === "desconhecidos") {
-        filtradas = filtradas.filter(c => c.desconhecido);
+        filtradas = filtradas.filter(
+            c => c.desconhecido
+        );
     }
 
     if (filtroAtual === "silenciados") {
-        filtradas = filtradas.filter(c => c.silenciado);
+        filtradas = filtradas.filter(
+            c => c.silenciado
+        );
     }
 
-    const pesquisa = $("search")?.value.toLowerCase().trim() || "";
+    const pesquisa =
+        $("search")?.value.toLowerCase().trim() || "";
 
     if (pesquisa) {
         filtradas = filtradas.filter(c =>
             c.nome.toLowerCase().includes(pesquisa) ||
             (c.numero || "").toLowerCase().includes(pesquisa) ||
             c.mensagens.some(m =>
-                !m.apagada && m.texto.toLowerCase().includes(pesquisa)
+                !m.apagada &&
+                m.texto.toLowerCase().includes(pesquisa)
             )
         );
     }
 
     if (!filtradas.length) {
         const vazio = document.createElement("div");
+
         vazio.className = "empty";
         vazio.textContent = "Nenhuma conversa encontrada.";
+
         lista.appendChild(vazio);
         return;
     }
 
     filtradas.forEach(contacto => {
         const item = document.createElement("div");
+
         item.className = "conversation";
 
-        if (conversaAtual && conversaAtual.id === contacto.id) {
+        if (
+            conversaAtual &&
+            conversaAtual.id === contacto.id
+        ) {
             item.classList.add("active");
         }
 
@@ -606,8 +785,20 @@ function abrirConversaOriginal(contacto) {
 }
 
 // ============================================
-// CABEÇALHO
+// CABEÇALHO E CHAMADAS TELEFÓNICAS
 // ============================================
+
+// Transforma o número guardado num endereço tel:
+// mantendo o indicativo internacional, se existir.
+
+function prepararNumeroTelefone(numero) {
+    if (!numero) return "";
+
+    return String(numero)
+        .trim()
+        .replace(/[^\d+]/g, "")
+        .replace(/(?!^)\+/g, "");
+}
 
 function renderizarCabecalho() {
     const nome = $("headerName");
@@ -615,8 +806,13 @@ function renderizarCabecalho() {
     const avatar = $("headerAvatar");
 
     if (!conversaAtual) {
-        if (nome) nome.textContent = "Mensagens";
-        if (numero) numero.textContent = "Seleciona uma conversa";
+        if (nome) {
+            nome.textContent = "Mensagens";
+        }
+
+        if (numero) {
+            numero.textContent = "Seleciona uma conversa";
+        }
 
         if (avatar) {
             avatar.innerHTML = "";
@@ -626,10 +822,43 @@ function renderizarCabecalho() {
         return;
     }
 
-    if (nome) nome.textContent = conversaAtual.nome;
+    if (nome) {
+        nome.textContent = conversaAtual.nome;
+    }
 
     if (numero) {
-        numero.textContent = conversaAtual.numero || "Contacto";
+        numero.innerHTML = "";
+
+        const numeroGuardado = conversaAtual.numero || "";
+
+        if (numeroGuardado.trim()) {
+            const numeroLimpo =
+                prepararNumeroTelefone(numeroGuardado);
+
+            if (/\d/.test(numeroLimpo)) {
+                const link = document.createElement("a");
+
+                link.href = "tel:" + numeroLimpo;
+                link.textContent = numeroGuardado;
+
+                link.title = "Tocar para abrir a aplicação Telefone";
+                link.setAttribute("aria-label",
+                    "Ligar para " + numeroGuardado
+                );
+
+                link.style.color = "inherit";
+                link.style.textDecoration = "none";
+                link.style.cursor = "pointer";
+                link.style.webkitTapHighlightColor =
+                    "rgba(0,122,255,0.2)";
+
+                numero.appendChild(link);
+            } else {
+                numero.textContent = numeroGuardado;
+            }
+        } else {
+            numero.textContent = "Contacto";
+        }
     }
 
     if (avatar) {
@@ -637,12 +866,15 @@ function renderizarCabecalho() {
 
         if (conversaAtual.foto) {
             const imagem = document.createElement("img");
+
             imagem.src = conversaAtual.foto;
             imagem.alt = conversaAtual.nome;
+
             avatar.appendChild(imagem);
         } else {
             avatar.textContent =
-                conversaAtual.iniciais || iniciaisNome(conversaAtual.nome);
+                conversaAtual.iniciais ||
+                iniciaisNome(conversaAtual.nome);
         }
     }
 }
@@ -663,10 +895,15 @@ function abrirOpcoesMensagem(contacto, mensagem) {
         if (opcao === "1") {
             recuperarMensagem(contacto, mensagem);
         } else if (opcao === "2") {
-            const confirmar = confirm("Eliminar definitivamente esta mensagem?");
+            const confirmar = confirm(
+                "Eliminar definitivamente esta mensagem?"
+            );
 
             if (confirmar) {
-                eliminarDefinitivamente(contacto, mensagem);
+                eliminarDefinitivamente(
+                    contacto,
+                    mensagem
+                );
             }
         }
 
@@ -680,7 +917,9 @@ function abrirOpcoesMensagem(contacto, mensagem) {
     );
 
     if (opcao === "1") {
-        const confirmar = confirm("Queres apagar esta mensagem?");
+        const confirmar = confirm(
+            "Queres apagar esta mensagem?"
+        );
 
         if (confirmar) {
             apagarMensagem(contacto, mensagem);
@@ -701,20 +940,27 @@ function renderizarMensagens() {
 
     if (!conversaAtual) {
         const vazio = document.createElement("div");
+
         vazio.className = "empty";
-        vazio.textContent = "Seleciona uma conversa para ver as mensagens.";
+        vazio.textContent =
+            "Seleciona uma conversa para ver as mensagens.";
+
         area.appendChild(vazio);
         return;
     }
 
-    const mensagensVisiveis = conversaAtual.mensagens.filter(
-        mensagem => !mensagem.apagada
-    );
+    const mensagensVisiveis =
+        conversaAtual.mensagens.filter(
+            mensagem => !mensagem.apagada
+        );
 
     if (!mensagensVisiveis.length) {
         const vazio = document.createElement("div");
+
         vazio.className = "empty";
-        vazio.textContent = "Esta conversa ainda não tem mensagens.";
+        vazio.textContent =
+            "Esta conversa ainda não tem mensagens.";
+
         area.appendChild(vazio);
         return;
     }
@@ -723,36 +969,48 @@ function renderizarMensagens() {
 
     mensagensVisiveis.forEach(mensagem => {
 
-        // Separador de dia: Ontem / Hoje
+        const dataMensagem =
+            mensagem.data || obterDataLocal();
 
-        if (mensagem.dia && mensagem.dia !== ultimoDia) {
-            const separador = document.createElement("div");
+        if (dataMensagem !== ultimoDia) {
+            const separador =
+                document.createElement("div");
 
             separador.className = "message-day";
-            separador.textContent = mensagem.dia;
+
+            separador.textContent =
+                formatarSeparadorData(dataMensagem);
 
             separador.style.textAlign = "center";
             separador.style.margin = "18px auto";
             separador.style.padding = "5px 12px";
             separador.style.width = "fit-content";
             separador.style.borderRadius = "12px";
-            separador.style.background = "rgba(128,128,128,0.15)";
+            separador.style.background =
+                "rgba(128,128,128,0.15)";
             separador.style.color = "inherit";
             separador.style.fontSize = "12px";
             separador.style.fontWeight = "600";
 
             area.appendChild(separador);
 
-            ultimoDia = mensagem.dia;
+            ultimoDia = dataMensagem;
         }
 
         const caixa = document.createElement("div");
 
-        caixa.className = "message " +
-            (mensagem.tipo === "enviada" ? "sent" : "received");
+        caixa.className =
+            "message " +
+            (
+                mensagem.tipo === "enviada"
+                    ? "sent"
+                    : "received"
+            );
 
         const texto = document.createElement("div");
+
         texto.textContent = mensagem.texto;
+
         caixa.appendChild(texto);
 
         if (mensagem.imagem) {
@@ -791,14 +1049,22 @@ function renderizarMensagens() {
 
         opcoes.addEventListener("click", evento => {
             evento.stopPropagation();
-            abrirOpcoesMensagem(conversaAtual, mensagem);
+
+            abrirOpcoesMensagem(
+                conversaAtual,
+                mensagem
+            );
         });
 
         caixa.appendChild(opcoes);
 
         caixa.addEventListener("contextmenu", evento => {
             evento.preventDefault();
-            abrirOpcoesMensagem(conversaAtual, mensagem);
+
+            abrirOpcoesMensagem(
+                conversaAtual,
+                mensagem
+            );
         });
 
         area.appendChild(caixa);
@@ -838,11 +1104,17 @@ function abrirMensagensApagadas() {
 
         escolha = prompt(texto);
 
-        if (escolha === null || escolha === "0") break;
+        if (escolha === null || escolha === "0") {
+            break;
+        }
 
         const indice = Number(escolha) - 1;
 
-        if (!Number.isInteger(indice) || indice < 0 || indice >= apagadas.length) {
+        if (
+            !Number.isInteger(indice) ||
+            indice < 0 ||
+            indice >= apagadas.length
+        ) {
             alert("Número inválido.");
             continue;
         }
@@ -850,18 +1122,28 @@ function abrirMensagensApagadas() {
         const item = apagadas[indice];
 
         const acao = prompt(
-            "MENSAGEM DE " + item.contacto.nome + "\n\n" +
+            "MENSAGEM DE " +
+            item.contacto.nome +
+            "\n\n" +
             "1 - Recuperar\n" +
             "2 - Eliminar definitivamente\n" +
             "3 - Voltar"
         );
 
         if (acao === "1") {
-            recuperarMensagem(item.contacto, item.mensagem);
+            recuperarMensagem(
+                item.contacto,
+                item.mensagem
+            );
+
             alert("Mensagem recuperada.");
         } else if (acao === "2") {
             if (confirm("Eliminar definitivamente?")) {
-                eliminarDefinitivamente(item.contacto, item.mensagem);
+                eliminarDefinitivamente(
+                    item.contacto,
+                    item.mensagem
+                );
+
                 alert("Mensagem eliminada.");
             }
         }
@@ -893,6 +1175,7 @@ function enviarMensagem(evento) {
     }
 
     const campo = $("messageInput");
+
     const texto = campo.value.trim();
 
     if (!texto) return;
@@ -921,19 +1204,25 @@ function abrirModalContacto(contacto = null) {
         ? "Editar contacto"
         : "Nova conversa";
 
-    $("contactName").value = contacto?.nome || "";
-    $("contactPhone").value = contacto?.numero || "";
+    $("contactName").value =
+        contacto?.nome || "";
+
+    $("contactPhone").value =
+        contacto?.numero || "";
+
     $("contactPhoto").value = "";
 }
 
 function fecharModalContacto() {
     $("contactModal")?.classList.remove("show");
+
     contactoEmEdicao = null;
 }
 
 function guardarContactoModal() {
     const nome = $("contactName").value.trim();
     const numero = $("contactPhone").value.trim();
+
     const ficheiro = $("contactPhoto").files[0];
 
     if (!nome) {
@@ -947,18 +1236,28 @@ function guardarContactoModal() {
                 nome,
                 numero,
                 iniciais: iniciaisNome(nome),
-                foto: foto !== undefined ? foto : contactoEmEdicao.foto
+                foto: foto !== undefined
+                    ? foto
+                    : contactoEmEdicao.foto
             });
 
             conversaAtual = contactoEmEdicao;
         } else {
-            const novo = criarContacto(nome, numero, iniciaisNome(nome));
+            const novo = criarContacto(
+                nome,
+                numero,
+                iniciaisNome(nome)
+            );
+
             novo.foto = foto || "";
+
             conversaAtual = novo;
         }
 
         guardarConversas();
+
         fecharModalContacto();
+
         abrirConversaOriginal(conversaAtual);
     }
 
@@ -988,7 +1287,10 @@ function apagarConversaAtual() {
 
     if (!confirmar) return;
 
-    conversas = conversas.filter(c => c.id !== conversaAtual.id);
+    conversas = conversas.filter(
+        c => c.id !== conversaAtual.id
+    );
+
     conversaAtual = null;
 
     guardarConversas();
@@ -1061,12 +1363,14 @@ function anexarFotografia(evento) {
 
         if (mensagem) {
             mensagem.imagem = e.target.result;
+
             guardarConversas();
             renderizarAplicacao();
         }
     };
 
     leitor.readAsDataURL(ficheiro);
+
     evento.target.value = "";
 }
 
@@ -1079,20 +1383,48 @@ function configurarEventos() {
         abrirModalContacto();
     });
 
-    $("cancelModal")?.addEventListener("click", fecharModalContacto);
-    $("saveContact")?.addEventListener("click", guardarContactoModal);
-    $("messageForm")?.addEventListener("submit", enviarMensagem);
-    $("search")?.addEventListener("input", pesquisar);
+    $("cancelModal")?.addEventListener(
+        "click",
+        fecharModalContacto
+    );
 
-    $("allButton")?.addEventListener("click", () => definirFiltro("todas"));
-    $("unknownButton")?.addEventListener("click", () => definirFiltro("desconhecidos"));
-    $("mutedButton")?.addEventListener("click", () => definirFiltro("silenciados"));
+    $("saveContact")?.addEventListener(
+        "click",
+        guardarContactoModal
+    );
 
-    $("contactEdit")?.addEventListener("click", () => {
-        if (conversaAtual) abrirModalContacto(conversaAtual);
+    $("messageForm")?.addEventListener(
+        "submit",
+        enviarMensagem
+    );
+
+    $("search")?.addEventListener(
+        "input",
+        pesquisar
+    );
+
+    $("allButton")?.addEventListener("click", () => {
+        definirFiltro("todas");
     });
 
-    $("deleteChat")?.addEventListener("click", apagarConversaAtual);
+    $("unknownButton")?.addEventListener("click", () => {
+        definirFiltro("desconhecidos");
+    });
+
+    $("mutedButton")?.addEventListener("click", () => {
+        definirFiltro("silenciados");
+    });
+
+    $("contactEdit")?.addEventListener("click", () => {
+        if (conversaAtual) {
+            abrirModalContacto(conversaAtual);
+        }
+    });
+
+    $("deleteChat")?.addEventListener(
+        "click",
+        apagarConversaAtual
+    );
 
     $("backButton")?.addEventListener("click", () => {
         $("app")?.classList.remove("chat-open");
@@ -1102,9 +1434,30 @@ function configurarEventos() {
         $("attachmentInput")?.click();
     });
 
-    $("attachmentInput")?.addEventListener("change", anexarFotografia);
+    $("attachmentInput")?.addEventListener(
+        "change",
+        anexarFotografia
+    );
 
     configurarEventosNotificacoes();
+}
+
+// ============================================
+// ATUALIZAÇÃO AUTOMÁTICA DAS DATAS
+// ============================================
+
+function configurarAtualizacaoAutomaticaDatas() {
+    document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) {
+            renderizarAplicacao();
+        }
+    });
+
+    setInterval(() => {
+        if (!document.hidden) {
+            renderizarAplicacao();
+        }
+    }, 60000);
 }
 
 // ============================================
@@ -1122,17 +1475,30 @@ function iniciarAplicacao() {
 
     configurarEventos();
 
+    configurarAtualizacaoAutomaticaDatas();
+
     preencherConfiguracaoNotificacoes();
 
     renderizarAplicacao();
 
     console.log("iMessage 2 iniciado.");
-    console.log("Conversas:", conversas.length);
-    console.log("Mensagens IPAJ:", mensagensIPAJ.length);
+
+    console.log(
+        "Conversas:",
+        conversas.length
+    );
+
+    console.log(
+        "Mensagens IPAJ:",
+        mensagensIPAJ.length
+    );
 }
 
 if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", iniciarAplicacao);
+    document.addEventListener(
+        "DOMContentLoaded",
+        iniciarAplicacao
+    );
 } else {
     iniciarAplicacao();
 }
